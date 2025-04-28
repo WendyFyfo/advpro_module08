@@ -4,7 +4,7 @@ package services;
 
 //Service for processing payments
 service PaymentService {
-    rpc ProcessPayment(PaymnetRequest) returns (PaymentResponse);
+    rpc ProcessPayment(PaymentRequest) returns (PaymentResponse);
 }
 
 // Service for checking transaction history
@@ -12,8 +12,8 @@ service TransactionService {
     rpc GetTransactionHistory(TransactionRequest) returns (stream TransactionResponse);
 }
 
-// SErvice for chatting with a customer service bot
-service ChatServie {
+// Service for chatting with a customer service bot
+service ChatService {
     rpc Chat(stream ChatMessage) returns (stream ChatMessage);
 }
 
@@ -23,7 +23,7 @@ message PaymentRequest {
 }
 
 message PaymentResponse {
-    bool success = 2;
+    bool success = 1;
 }
 
 message TransactionRequest {
