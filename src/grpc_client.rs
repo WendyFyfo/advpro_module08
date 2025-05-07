@@ -49,6 +49,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 user_id: "user_123".to_string(),
                 message: line,
             };
+            
 
             if tx.send(message).await.is_err() {
                 eprintln!("Failed to send message to server.");
